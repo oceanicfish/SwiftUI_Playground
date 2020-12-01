@@ -12,10 +12,9 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            playerView().frame(height: UIScreen.main.bounds.height / 3)
-            Spacer()
+            playerView()
         }
-        .background(Color.gray)
+        .background(Color.secondary)
     }
 }
 
@@ -27,26 +26,10 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-//struct playerView : UIViewControllerRepresentable {
-//
-//    func makeUIViewController(context: Context) -> AVPlayerViewController {
-//        let controller = AVPlayerViewController()
-//        let mPlayer = AVPlayer(url: URL(string: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8")!)
-//        controller.player = mPlayer
-//        return controller
-//    }
-//
-//    func updateUIViewController(_ uiViewController: AVPlayerViewController, context: Context) {
-//
-//    }
-//}
-
 struct playerView : UIViewControllerRepresentable {
     
     func makeUIViewController(context: Context) -> MultiAnglePlayerController {
         let controller = MultiAnglePlayerController()
-//        let mPlayer = AVPlayer(url: URL(string: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8")!)
-//        controller.player = mPlayer
         return controller
     }
     
